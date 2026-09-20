@@ -12,6 +12,11 @@ Optional:
     - retry
     - update_method
     - update_query_parameters
+    - timeouts (block):
+        - create (optional)
+        - delete (optional)
+        - read (optional)
+        - update (optional)
 EOT
 
   type = map(object({
@@ -26,6 +31,12 @@ EOT
     }))
     update_method           = optional(string)
     update_query_parameters = optional(map(any))
+    timeouts = optional(object({
+      create = optional(string)
+      delete = optional(string)
+      read   = optional(string)
+      update = optional(string)
+    }))
   }))
 }
 
